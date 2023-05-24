@@ -1,8 +1,21 @@
 .add_column {
   display: inline-block;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 8px 16px 14px;
+  background-color: rgb(227, 242, 253);
+  border-radius: 8px;
+
 
   .btn_wrap {
     display: flex;
     justify-content: flex-end;
   }
+}
+
+
+.auto_maker {
+  padding: 20px 40px;
+  box-sizing: border-box;
+
 }

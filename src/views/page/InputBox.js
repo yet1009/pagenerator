@@ -1,8 +1,5 @@
-import DivBox from "../../components/wrap/DivBox";
-import Inputs from "../../components/form/Inputs";
 import Btns from "../../components/form/Btns";
-
-
+import Box from "../../components/wrap/DivBox";
 
 
 const InputBox = () => {
@@ -11,7 +8,7 @@ const InputBox = () => {
         placeholder: 'Column Name',
         value: '',
         onChange: (e) => {
-            // console.log(e.target.value)
+
         }
     }
 
@@ -19,40 +16,31 @@ const InputBox = () => {
         {
             title: 'Cancel',
             className: 'btn btn_cancel',
-            onClick: () => {}
+            onClick: () => {
+            }
         },
         {
             title: 'Add',
             className: 'btn btn_add',
-            onClick: () => {}
+            onClick: () => {
+            }
         }
     ]
 
-    // <DivBox classN='btn_box'>
-    //     <Btns></Btns>
-    // </DivBox>
-    // <DivBox classN='btn_box'>
-    //     <Btns></Btns>
-    // </DivBox>
+    const prop = {
+        title: 'Add Column',
+        className: 'btn btn_add',
+        onClick: () => {
+        }
+    }
 
 
     return (
-        <DivBox classN='add_column'>
-            <DivBox classN='form_box'>
-                <Inputs {...iptProp} />
-            </DivBox>
-            <DivBox classN='btn_wrap'>
-                {
-                    btnProp.map((el, idx) => {
-                        return (
-                            <DivBox classN='btn_box' key={`btn${idx}`}>
-                                <Btns {...el} />
-                            </DivBox>
-                        )
-                    })
-                }
-            </DivBox>
-        </DivBox>
+        <Box classN='add_column'>
+            <Box classN='btn_box'>
+                <Btns {...prop}></Btns>
+            </Box>
+        </Box>
     )
 }
 

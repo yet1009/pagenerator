@@ -14,7 +14,7 @@ const Main = () => {
     return (
         <>
             <MainLayout />
-            <Test />
+            {/*<Test />*/}
         </>
     )
 }

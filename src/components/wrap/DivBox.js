@@ -1,4 +1,4 @@
-const DivBox = ({ classN='box', children }) => {
+const Box = ({ classN='box', children }) => {
 
     return (
         <div className={classN}>
@@ -7,4 +7,4 @@ const DivBox = ({ classN='box', children }) => {
     )
 }
 
-export default DivBox;
+export default Box;

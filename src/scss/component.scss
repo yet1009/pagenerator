@@ -1,1 +1,13 @@
 .btn_box {}
+
+
+.btn_add {
+  color: #2196f3;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: rgba(33, 150, 243, 0.04);
+  }
+}
