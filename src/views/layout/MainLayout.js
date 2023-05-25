@@ -1,15 +1,15 @@
-import ColumnAdd from "../page/ColumnAdd";
-import InputBox from "../page/InputBox";
+import { Routes, Route } from 'react-router-dom';
+
+import RouteIdentifier from "../../routes/RouteIdentifier";
+
+
 
 const MainLayout = () => {
 
     return (
-        <div className='layout'>
-            {/*<Routes>*/}
-            {/*    */}
-            {/*</Routes>*/}
-            <InputBox />
-        </div>
+        <Routes>
+            <RouteIdentifier />
+        </Routes>
     )
 }
 
