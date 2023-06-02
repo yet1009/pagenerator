@@ -1,5 +1,3 @@
-
-
 const Inputs = (props) => {
     console.log(props)
 

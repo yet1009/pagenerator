@@ -12,21 +12,6 @@ const _minusHandler = (state) => {
 
 const useDispatch = (state, action) => {
 
-    // switch(action) {
-    //     case 'minus' :
-    //         _minusHandler(state)
-    //         break;
-    //
-    //     case 'plus' :
-    //         _plushandler(state)
-    //         break;
-    //
-    //     default:
-    //         return;
-    // }
-    //
-
-
 }
 
 export default useDispatch;

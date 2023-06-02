@@ -10,10 +10,10 @@ const ForgotPw = Loadable(lazy(() => import('../ui-component/common/ForgotPassWo
 
 
 export const defaultRoutes = [
-    {path: DEFAULT_PATHS.APP, exact: true, element: App},
-    {path: DEFAULT_PATHS.LOGIN, exact: true, element: Login},
-    {path: DEFAULT_PATHS.NOTFOUND, exact: true, element: NotFound},
-    {path: DEFAULT_PATHS.FORGOT_PASSWORD, exact: true, element: ForgotPw},
+    {path: DEFAULT_PATHS.APP, exact: true, element: <App />},
+    {path: DEFAULT_PATHS.LOGIN, exact: true, element: <Login />},
+    {path: DEFAULT_PATHS.NOTFOUND, exact: true, element: <NotFound />},
+    {path: DEFAULT_PATHS.FORGOT_PASSWORD, exact: true, element: <ForgotPw />},
 ]
 
 

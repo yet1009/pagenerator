@@ -1,15 +1,14 @@
-import { BrowserRouter as Router } from "react-router-dom";
-import RouteIdentifier from "./routes/RouteIdentifier";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import './scss/styles.scss';
 
 
+
 const App = () => {
 
+
     return (
-        <Router>
-            <RouteIdentifier />
-        </Router>
+        <div>12</div>
     )
 }
 

@@ -8,6 +8,8 @@ class OrderComp {
         makeAutoObservable(this);
     }
 
-
-
 }
+
+let orderComp = new OrderComp();
+
+export { orderComp };
