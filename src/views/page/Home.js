@@ -1,66 +1,60 @@
-import {authCheck, componentStore} from "../../store";
+import {authCheck, componentStore, dynamicComp} from "../../store";
 import {observer} from "mobx-react";
-import { useNavigate } from "react-router-dom";
 import Redirection, { Redirect } from "../../routes/Redirect";
-import {lazy, useEffect, useState} from "react";
+import {lazy, useEffect, useMemo, useRef, useState} from "react";
 import Loadable from "../../ui-component/Loadable";
 
+import Inputs from "../../components/form/Inputs";
+import Btns from "../../components/form/Btns";
+import Renderer from "../../ui-component/Renderer";
+import {toJS} from "mobx";
 
 
+// const Basic = Loadable(lazy(() => import('../unit/Basic')))
 
-const Home = observer(() => {
 
-    let LoggedIn = authCheck.isLogin;
-    let navigate = useNavigate();
+const Home = observer(({ handleRef }) => {
+
     const [search, setSearch] = useState('')
-    // let path = '../../components/form/Inputs';
+    const [val, setVal] = useState('')
+    const [bool, setBool] = useState(false);
 
-    const _iptHandler = (e) => {
-        setSearch(e.target.value);
+
+    const ipts = {
+        id: 'search',
+        label: '',
+        value: search,
+        onChange: (e) => {
+            setSearch(e.target.value)
+        },
     }
 
-    const _checkHandler = (e) => {
-
-        if(!search.length) return;
-        componentStore.compCheckHandler(search)
-
+    const btns = {
+        title: '검색',
+        onClick: (e) => {
+            setBool(true)
+            setVal(search)
+            setSearch('')
+        },
     }
 
-    useEffect(() => {
+    // const _checkHandler = (e) => {
+    //     if(!search.length) return;
+    //     componentStore.compCheckHandler(search)
+    // }
 
 
-
-    }, [search]);
-
-
-
-    // useEffect(() => {
-    //     if(!LoggedIn) {
-    //         navigate('/dashboard');
-    //     }
-    // }, [])
-
-
+    const sideMenu = useMemo(() => (
+        (dynamicComp.list() || []).map((el, idx) => <div key={`item__${idx}`}>{el}</div>)
+    ), [])
 
 
     return (
         <div className='layout'>
-            <div className='searchBox'>
-                <input
-                    value={search}
-                    onChange={(e) => {
-                        _iptHandler(e)
-                    }}
-                />
-                <button
-                    onClick={(e) => {
-                        _checkHandler(e)
-                    }}
-                >검색</button>
-            </div>
-            {
-                // componentStore.flag &&
-            }
+            <Inputs {...ipts} />
+            <Btns {...btns} />
+            {bool && <Renderer item={dynamicComp.components[val]}/>}
+            {sideMenu}
         </div>
     );
 })

@@ -8,12 +8,12 @@ class ComponentStore {
 
     componentName = '';
     path = [
-      `../components/form`,
-      `../components/wrap`,
-      `../ui-component`,
-      `../ui-component/common`,
-      `../views/layout`,
-      `../views/page`,
+      `../components/form/`,
+      `../components/wrap/`,
+      `../ui-component/`,
+      `../ui-component/common/`,
+      `../views/layout/`,
+      `../views/page/`,
     ];
 
     render = {}
@@ -21,25 +21,33 @@ class ComponentStore {
     Components = null;
     flag = false;
 
+    Acomponent = null;
+
     constructor() {
         makeAutoObservable(this)
     }
 
 
     compCheckHandler(value) {
+
+
+
         this.componentName = value; // component 이름넣기
         this.flag = true;
 
-        const itemMapper = this.path.map((el, idx) => {
-            const Item = Loadable(lazy(() => import(el+'/'+this.componentName)));
+        this.path.map((el, idx) => {
+            const Items = Loadable(lazy(() => import(el+this.componentName)))
 
-            console.dir(Item)
+            console.log(Items)
         })
 
+        this.Acomponent = Loadable(lazy(() => import(`../components/form/${this.componentName}`)));
 
+    }
 
-
-
+    findComponent() {
+        this.itemMapper.push(this.Acomponent ?? null)
+        return [...this.itemMapper]
     }
 
 

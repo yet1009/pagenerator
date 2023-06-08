@@ -10,4 +10,5 @@ const Btns = (props) => {
     )
 }
 
-export default Btns;
+export default Btns
+

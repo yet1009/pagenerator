@@ -1,5 +1,5 @@
 const Inputs = (props) => {
-    console.log(props)
+    // console.log(props)
 
     return (
         <>
@@ -8,4 +8,5 @@ const Inputs = (props) => {
         </>
     )
 }
+
 export default Inputs;
