@@ -4,6 +4,7 @@ import DivBox from "../../components/wrap/DivBox";
 const btnProps = {
     title: 'Add Column',
     className: 'btn btn_add',
+    type: 'button',
     onClick: (e) => {
         // console.log(e.target)
     },

@@ -1,3 +1,6 @@
+$color1: rgba(144, 202, 249, 0.46);
+
+
 .add_column {
   display: inline-block;
   box-sizing: border-box;
@@ -17,5 +20,72 @@
 .auto_maker {
   padding: 20px 40px;
   box-sizing: border-box;
+}
 
+.wrap {
+  position: absolute;
+  user-select: none;
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  padding: 8px 16px 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: rgba(227, 242, 253);
+
+  &.draggable {
+
+  }
+
+  &.empty {
+    right: 0;
+    min-width: 200px;
+
+    .btn_box {
+      text-align: center;
+
+      &:hover {
+        background-color: rgba(62, 133, 189, 0.1);
+      }
+
+    }
+
+    .btn_wrap {
+      .btn_box {
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.col_box {
+  .ipt_box {
+    margin-right: 15px;
+  }
+}
+
+.newcol_box {
+  padding: 24px 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #eee;
+
+  .ipt_box {
+    .basic {
+      &:hover, &:focus {
+        border-color: transparent;
+      }
+    }
+  }
+
+  .btn_wrap {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+  }
 }

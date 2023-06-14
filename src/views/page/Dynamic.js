@@ -22,3 +22,4 @@ const Dynamic = ({ path }) => {
 }
 
 export default Dynamic
+
