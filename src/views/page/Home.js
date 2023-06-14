@@ -25,7 +25,6 @@ const Home = observer(({ handleRef }) => {
 
 
     const ipts = {
-        id: 'search',
         label: '',
         className: 'basic',
         value: search,
@@ -94,6 +93,7 @@ const Home = observer(({ handleRef }) => {
         onChange: (e) => {
             setAdd(e.target.value)
         },
+        placeholder: 'Add Column',
     }
 
 

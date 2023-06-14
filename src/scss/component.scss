@@ -13,6 +13,13 @@ $color1: rgba(144, 202, 249, 0.46);
   color: #2196f3;
 }
 
+.btn_cancel {
+  &:hover {
+    border-radius: 6px;
+    background-color: rgba(244, 67, 54, 0.04);
+  }
+}
+
 input {
   display: inline-block;
   vertical-align: middle;

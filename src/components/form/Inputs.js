@@ -1,10 +1,14 @@
 const Inputs = (props) => {
-    // console.log(props)
+    let propObj = {};
+
+    for(let i in props) {
+        if(i !== 'label') propObj[i] = props[i];
+    }
 
     return (
         <div className='ipt_box'>
-            {props.label ? <label htmlFor={props.id}>{props.label}</label> : null}
-            <input {...props} />
+            {propObj?.label?.length > 0 && <label htmlFor={props.id}>{props.label}</label>}
+            <input {...propObj} />
         </div>
     )
 }
