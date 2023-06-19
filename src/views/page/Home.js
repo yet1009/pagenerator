@@ -50,7 +50,7 @@ const Home = observer(({ handleRef }) => {
 
 
     const addBtn = {
-        text: 'Add Column',
+        text: '카테고리 추가',
         className: 'btn btn_add',
         type: 'button',
         onClick: () => {},
@@ -62,7 +62,7 @@ const Home = observer(({ handleRef }) => {
 
     const btnArr = [
         {
-            text: 'Cancel',
+            text: '취소',
             className: 'btn btn_cancel',
             onClick: () => {},
             style: {
@@ -72,18 +72,24 @@ const Home = observer(({ handleRef }) => {
             }
         },
         {
-            text: 'Add',
+            text: '등록',
             className: 'btn btn_addition',
             onClick: () => {},
-            style: {
-                padding: '4px 10px',
-                transition: 'background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-                color: "#fff",
-                backgroundColor: "#2196f3",
-                boxShadow: '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)',
-                fontWeight: 500,
-                borderRadius: "4px",
-            }
+        }
+    ];
+
+
+    const btnArr2 = [
+        {
+            title: '삭제',
+            className: 'btn btn_delete',
+            onClick: () => {},
+            style: {},
+        },
+        {
+            text: '등록',
+            className: 'btn btn_addition',
+            onClick: () => {},
         }
     ]
 
@@ -108,6 +114,9 @@ const Home = observer(({ handleRef }) => {
 
             <DivBox classN='wrap empty'>
                 <Btns {...addBtn} />
+
+
+                {/* 카테고리 title */}
                 <DivBox classN='newcol_box'>
                     <Inputs {...addipt} />
                     <DivBox classN='btn_wrap'>
@@ -120,6 +129,21 @@ const Home = observer(({ handleRef }) => {
                         }
                     </DivBox>
                 </DivBox>
+
+                <DivBox classN='newcol_box sub depth1'>
+                    <Inputs {...addipt} />
+                    <DivBox classN='btn_wrap'>
+                        {
+                            btnArr2.map((el,idx) => {
+                                return (
+                                    <Btns {...el} key={`btn__${idx}`} />
+                                )
+                            })
+                        }
+                    </DivBox>
+                </DivBox>
+
+
             </DivBox>
 
         </div>

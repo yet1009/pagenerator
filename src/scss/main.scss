@@ -32,7 +32,8 @@ $color1: rgba(144, 202, 249, 0.46);
   box-sizing: border-box;
   border-radius: 8px;
   border: 1px solid transparent;
-  background-color: rgba(227, 242, 253);
+  _background-color: rgba(227, 242, 253);
+  background-color: #fcf2f7;
 
   &.draggable {
 
