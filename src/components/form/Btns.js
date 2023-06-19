@@ -1,7 +1,7 @@
 const Btns = (props) => {
     let propObj = {};
 
-    console.log(props)
+    // console.log(props)
     for(let i in props) {
         if(i !== 'text') propObj[i] = props[i]
     }

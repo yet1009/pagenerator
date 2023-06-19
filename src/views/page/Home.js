@@ -8,12 +8,13 @@ import Inputs from "../../components/form/Inputs";
 import Btns from "../../components/form/Btns";
 import DivBox from "../../components/wrap/DivBox";
 import {Input} from "@mui/material";
-
 import del from '../../assets/imgs/icon_delete.png'
 
 
 
-// const Basic = Loadable(lazy(() => import('../unit/Basic')))
+
+
+
 
 
 const Home = observer(({ handleRef }) => {
@@ -23,6 +24,10 @@ const Home = observer(({ handleRef }) => {
     const [bool, setBool] = useState(false);
     const [add, setAdd] = useState('');
 
+
+    useEffect(() => {
+
+    }, [])
 
     const ipts = {
         label: '',
